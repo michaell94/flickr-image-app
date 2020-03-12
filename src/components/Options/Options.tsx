@@ -3,7 +3,8 @@ import { IOptions } from "./interfaces";
 
 const Options = ({ infiniteScroll, onInifiniteChange }: IOptions) => {
   return (
-    <div className="options">
+    <section className="options">
+      <h2>Options</h2>
       <input
         id="inifityScroll"
         type="checkbox"
@@ -11,7 +12,7 @@ const Options = ({ infiniteScroll, onInifiniteChange }: IOptions) => {
         onClick={onInifiniteChange}
       />
       <label htmlFor="inifityScroll">Infinite Scroll</label>
-    </div>
+    </section>
   );
 };
 

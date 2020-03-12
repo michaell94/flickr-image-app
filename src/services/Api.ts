@@ -1,4 +1,4 @@
-import { IPhotosResponse } from "../types/Api";
+import { IPhotosResponse } from "./../interfaces/Api";
 
 const API_URL = `${process.env.REACT_APP_API_URL}?method=flickr.photos.search&api_key=${process.env.REACT_APP_API_KEY}&format=json&nojsoncallback=1`;
 

@@ -1,4 +1,4 @@
-import { IPhoto } from "../../types/Api";
+import { IPhoto } from "./../../interfaces/Api";
 
 export interface IImages {
   infiniteScroll: boolean;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { IPhoto } from "../../types/Api";
+import { IPhoto } from "./../../interfaces/Api";
 import { fetchImages } from "../../services/Api";
 import LoadMore from "../LoadMore/LoadMore";
 import Loader from "../Loader/Loader";
@@ -12,6 +12,8 @@ const Images = ({ infiniteScroll, searchString }: IImages) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const loadPhotos = () => {
+    setIsLoading(true);
+
     fetchImages(searchString, page)
       .then(({ photo }) => {
         setImages([...images, ...photo]);
@@ -24,19 +26,26 @@ const Images = ({ infiniteScroll, searchString }: IImages) => {
       });
   };
 
+  const renderLoadMore = !isLoading && (
+    <LoadMore
+      infiniteScroll={infiniteScroll}
+      isLoading={isLoading}
+      loadingOffset={300}
+      onLoadMore={loadPhotos}
+    />
+  );
+
+  const renderLoader = isLoading && <Loader />;
+
   useEffect(() => loadPhotos(), []);
 
   return (
-    <div className="images">
+    <section className="images">
+      <h2>Photos</h2>
       <ImagesList images={images} />
-      <LoadMore
-        infiniteScroll={infiniteScroll}
-        isLoading={isLoading}
-        loadingOffset={300}
-        onLoadMore={loadPhotos}
-      />
-      {isLoading && <Loader />}
-    </div>
+      {renderLoadMore}
+      {renderLoader}
+    </section>
   );
 };
 

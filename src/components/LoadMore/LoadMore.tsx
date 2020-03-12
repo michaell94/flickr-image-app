@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { ILoadMore } from "./interfaces";
 import Button from "../Button/Button";
+import "./LoadMore.scss";
 
 const LoadMore = ({
   loadingOffset,
@@ -28,7 +29,9 @@ const LoadMore = ({
   });
 
   return !infiniteScroll ? (
-    <Button onClick={onLoadMore} text={"Fetch more!"} />
+    <div className="load-more">
+      <Button onClick={onLoadMore} text={"Fetch more!"} />
+    </div>
   ) : null;
 };
 

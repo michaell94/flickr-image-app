@@ -1,12 +1,14 @@
+@import "./src/styles/variables";
+
 .loader {
-  margin: 20px 0;
+  margin: $v-margin 0;
 
   &__spinner {
-    border: 16px solid #f3f3f3;
+    border: $spinner-size solid $c-gray;
     border-radius: 50%;
-    border-top: 16px solid #3498db;
-    width: 120px;
-    height: 120px;
+    border-top: $spinner-size solid $c-blue;
+    width: $spinner-width;
+    height: $spinner-height;
     animation: spin 2s linear infinite;
     margin: 0 auto;
   }
