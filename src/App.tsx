@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.scss";
+import Images from "./components/Images/Images";
+import Options from "./components/Options/Options";
 
 function App() {
+  const [infiniteScroll, setInfiniteScroll] = useState(false);
+  const searchString = "dogs";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="app">
+      <h4>Options</h4>
+      <Options
+        infiniteScroll={infiniteScroll}
+        onInifiniteChange={() => setInfiniteScroll(!infiniteScroll)}
+      />
+      <h4>Photos</h4>
+      <Images infiniteScroll={infiniteScroll} searchString={searchString} />
+    </main>
   );
 }
 

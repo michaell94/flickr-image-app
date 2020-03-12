@@ -1,0 +1,17 @@
+.images-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    width: 10%;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
