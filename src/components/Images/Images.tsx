@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { IPhoto } from "./../../interfaces/Api";
-import { fetchImages } from "../../services/Api";
-import LoadMore from "../LoadMore/LoadMore";
-import Loader from "../Loader/Loader";
+import { IPhoto } from "interfaces/Api";
+import { fetchImages } from "services/Api";
+import LoadMore from "components/LoadMore/LoadMore";
+import Loader from "components/Loader/Loader";
+import Alert from "components/Alert/Alert";
+import { ALERT_TYPE } from "components/Alert/consts";
+import Logger from "services/Logger";
 import ImagesList from "./ImagesList";
 import { IImages } from "./interfaces";
 
@@ -10,6 +13,7 @@ const Images = ({ infiniteScroll, searchString }: IImages) => {
   const [images, setImages] = useState<IPhoto[]>([]);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const loadPhotos = () => {
     setIsLoading(true);
@@ -21,7 +25,8 @@ const Images = ({ infiniteScroll, searchString }: IImages) => {
         setIsLoading(false);
       })
       .catch((error: Error) => {
-        console.error(error);
+        Logger(error);
+        setIsError(true);
         setIsLoading(false);
       });
   };
@@ -37,12 +42,20 @@ const Images = ({ infiniteScroll, searchString }: IImages) => {
 
   const renderLoader = isLoading && <Loader />;
 
+  const renderImagesList = isError ? (
+    <Alert type={ALERT_TYPE.DANGER}>
+      An error occurred. Please try again later. :(
+    </Alert>
+  ) : (
+    <ImagesList images={images} />
+  );
+
   useEffect(() => loadPhotos(), []);
 
   return (
     <section className="images">
       <h2>Photos</h2>
-      <ImagesList images={images} />
+      {renderImagesList}
       {renderLoadMore}
       {renderLoader}
     </section>

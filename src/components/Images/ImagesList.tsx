@@ -1,6 +1,6 @@
 import React from "react";
-import Image from "../Image/Image";
-import { getImageUrl } from "../../common/helpers";
+import Image from "components/Image/Image";
+import { getImageUrl } from "common/helpers";
 import { IImagesList } from "./interfaces";
 import "./Images.scss";
 

@@ -1,0 +1,16 @@
+@import "src/styles/variables";
+
+.alert {
+  line-height: 1.5em;
+  position: relative;
+  margin-bottom: $alert-spacing;
+  padding: $alert-spacing;
+  border: 1px solid transparent;
+  border-radius: 3px;
+
+  &--danger {
+    color: $alert-danger-color;
+    background-color: $alert-danger-bg;
+    border-color: $alert-danger-border;
+  }
+}

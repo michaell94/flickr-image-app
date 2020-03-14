@@ -1,6 +1,6 @@
 import React from "react";
+import LazyLoad from "components/LazyLoad/LazdyLoad";
 import { IImage } from "./interfaces";
-import LazyLoad from "../LazyLoad/LazdyLoad";
 import ImageInternal from "./ImageInternal/ImageInternal";
 
 const Image = ({ url, alt, omitLazyload }: IImage) =>

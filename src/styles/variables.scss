@@ -1,5 +1,8 @@
+// Colors
+
 $c-blue: #3498db;
 $c-gray: #f3f3f3;
+$c-white: #fff;
 
 // Spacing
 
@@ -12,7 +15,14 @@ $spinner-width: 53px;
 $spinner-height: 53px;
 $spinner-size: 10px;
 
-//Button style
+// Button style
 
 $btn-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 $btn-padding: 10px 30px;
+
+// Alert styles
+
+$alert-spacing: 15px;
+$alert-danger-bg: #f2dede;
+$alert-danger-border: #ebccd1;
+$alert-danger-color: #a94442;

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
+import Button from "components/Button/Button";
 import { ILoadMore } from "./interfaces";
-import Button from "../Button/Button";
 import "./LoadMore.scss";
 
 const LoadMore = ({
