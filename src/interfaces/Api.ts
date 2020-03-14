@@ -1,3 +1,23 @@
+interface ResponseObject {
+  id: string;
+  secret: string;
+  server: string;
+  farm: number;
+}
+
+interface UserObject {
+  username: string;
+  realname: string;
+}
+
+interface DateObject {
+  taken: string;
+}
+
+interface ContentObject {
+  _content: string;
+}
+
 export interface IPhotosResponse {
   page: number;
   pages: number;
@@ -6,16 +26,14 @@ export interface IPhotosResponse {
   photo: IPhoto[];
 }
 
-export interface IPhoto {
-  id: string;
+export interface IPhoto extends ResponseObject {
   owner: string;
-  secret: string;
-  server: string;
-  farm: number;
   title: string;
-  ispublic: NumericBoolean;
-  isfriend: NumericBoolean;
-  isfamily: NumericBoolean;
 }
 
-export type NumericBoolean = 1 | 0;
+export interface IPhotoDetails extends ResponseObject {
+  title: ContentObject;
+  description: ContentObject;
+  dates: DateObject;
+  owner: UserObject;
+}

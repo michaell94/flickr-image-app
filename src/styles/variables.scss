@@ -26,3 +26,14 @@ $alert-spacing: 15px;
 $alert-danger-bg: #f2dede;
 $alert-danger-border: #ebccd1;
 $alert-danger-color: #a94442;
+
+// Breakpoints
+
+$tabletH: 768px; // tablet vertical 767px and less
+$tabletW: 992px; // tablet horizontal 1023px {desctop - 1} and less
+
+@mixin breakpoint($rule) {
+  @media only screen and (max-width: #{$rule}) {
+    @content;
+  }
+}

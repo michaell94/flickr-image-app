@@ -1,4 +1,4 @@
-import { IPhotosResponse } from "./../interfaces/Api";
+import {IPhotoDetails, IPhotosResponse} from "interfaces/Api";
 import { API_METHODS } from "./consts";
 
 const getApiUrl = (method: string) =>
@@ -17,8 +17,8 @@ export const fetchImages = (
   return getData(url).then(({ photos }) => photos);
 };
 
-export const fetchImage = (imageId: number): Promise<IPhotosResponse> => {
-  const url = `${getApiUrl(API_METHODS.GET_PHOTO)}&photo_id${imageId}`;
+export const fetchImage = (imageId: string): Promise<IPhotoDetails> => {
+  const url = `${getApiUrl(API_METHODS.GET_PHOTO)}&photo_id=${imageId}`;
 
-  return getData(url).then(({ photos }) => photos);
+  return getData(url).then(({ photo }) => photo);
 };

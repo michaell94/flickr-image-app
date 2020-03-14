@@ -16,7 +16,7 @@ const ImageInternal = ({ url, alt }: IImageInternal) => {
     >
       <img
         className="image__img"
-        onLoad={() => setShowImage(true)}
+        onLoad={e => setShowImage(true)}
         onError={() => setShowError(true)}
         src={url}
         alt={alt}

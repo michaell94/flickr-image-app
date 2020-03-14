@@ -4,5 +4,5 @@ export interface IImageInternal {
 }
 
 export interface IImage extends IImageInternal {
-  omitLazyload: boolean;
+  omitLazyload?: boolean;
 }

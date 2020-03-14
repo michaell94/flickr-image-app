@@ -5,7 +5,7 @@ import Options from "./../components/Options/Options";
 
 function App() {
   const [infiniteScroll, setInfiniteScroll] = useState(false);
-  const searchString = "dogs";
+  const searchString = "dog";
 
   return (
     <main className="app">

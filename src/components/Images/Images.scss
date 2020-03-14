@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 .images-list {
   list-style: none;
   padding: 0;
@@ -8,6 +10,14 @@
   &__item {
     display: flex;
     width: 10%;
+
+    @include breakpoint($tabletW) {
+      width: 25%;
+    }
+
+    @include breakpoint($tabletH) {
+      width: 33.33%;
+    }
 
     img {
       display: block;

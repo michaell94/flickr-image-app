@@ -1,0 +1,40 @@
+@import "src/styles/variables";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  &__caption {
+    max-height: 100px;
+    overflow-y: scroll;
+  }
+
+  &__inner {
+    max-width: 600px;
+    padding: 0 $v-margin;
+
+    @include breakpoint($tabletW) {
+      max-width: 100%;
+    }
+
+    .image {
+      max-height: 400px;
+
+      @include breakpoint($tabletW) {
+        max-height: 300px;
+      }
+
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+}
