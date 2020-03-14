@@ -3,7 +3,7 @@ import Image from "components/Image/Image";
 import { getImageUrl } from "common/helpers";
 import { IImagesList } from "./interfaces";
 import "./Images.scss";
-import ImageMore from "../ImageMore/ImageMore";
+import ImageMore from "components/ImageMore/ImageMore";
 
 const ImagesList = ({ images }: IImagesList) => (
   <ul className="images-list">

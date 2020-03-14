@@ -9,7 +9,7 @@ const Options = ({ infiniteScroll, onInifiniteChange }: IOptions) => {
         id="inifityScroll"
         type="checkbox"
         checked={infiniteScroll}
-        onClick={onInifiniteChange}
+        onChange={onInifiniteChange}
       />
       <label htmlFor="inifityScroll">Infinite Scroll</label>
     </section>

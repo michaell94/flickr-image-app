@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.scss";
 import Images from "./../components/Images/Images";
 import Options from "./../components/Options/Options";
